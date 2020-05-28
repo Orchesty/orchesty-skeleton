@@ -22,6 +22,11 @@ doctrine_mongodb:
     document_managers:
         default:
             mappings:
+                AppStoreDocument:
+                    type: annotation
+                    is_bundle: false
+                    dir: "%kernel.project_dir%/vendor/hanaboso/app-store/src/Document"
+                    prefix: Hanaboso\HbPFAppStore\Document
                 ApplicationDocument:
                     type: annotation
                     is_bundle: false

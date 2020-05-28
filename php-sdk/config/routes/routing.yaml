@@ -1,5 +1,9 @@
-hb_pf_mapper:
-    resource: "@HbPFMapperBundle/Controller"
+hb_pf_applications:
+    resource: "@HbPFApplicationBundle/Controller"
+    type: annotation
+
+hb_pf_appstore:
+    resource: "@HbPFAppStoreBundle"
     type: annotation
 
 hb_pf_connector:
