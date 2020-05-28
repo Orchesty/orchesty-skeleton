@@ -1,5 +1,9 @@
 # Pipes Skeleton
 
+## How to install
+1. Clone skeleton repository `https://github.com/hanaboso/pipes-skeleton`
+2. Initialize git project from cloned template `rm -rf .git && git init`
+
 ## How to run
 - **make init-dev**
 - **http://127.0.0.10/ui**
