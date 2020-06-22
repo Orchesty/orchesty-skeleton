@@ -17,7 +17,7 @@ services:
             PHP_WEBROOT: /var/www/public
             COMPOSER_HOME: ${HOME}/dev/.composer
             KERNEL_CLASS: Pipes\PhpSdk\Kernel
-            BACKEND_HOST: 127.0.0.10:8080
+            BACKEND_HOST: ${DEV_IP}:8080
             MONGODB_DSN: mongodb://mongo/skeleton
             MONGODB_DB: skeleton
             RABBITMQ_DSN: amqp://rabbitmq:5672

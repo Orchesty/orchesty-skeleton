@@ -12,6 +12,17 @@
             "Pipes\\PhpSdk\\Tests\\": "tests/"
         }
     },
+    "replace": {
+        "ralouphie/getallheaders": "*",
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-intl-grapheme": "*",
+        "symfony/polyfill-intl-idn": "*",
+        "symfony/polyfill-intl-normalizer": "*",
+        "symfony/polyfill-mbstring": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*"
+    },
     "require": {
         "php": "^7.4",
         "ext-dom": "*",

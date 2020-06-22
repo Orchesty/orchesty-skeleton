@@ -28,6 +28,7 @@ composer-update:
 
 composer-outdated:
 	$(DA) composer outdated
+	$(DA) composer normalize
 
 # App section
 clear-cache:
