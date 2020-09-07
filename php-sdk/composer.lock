@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.151.5",
+            "version": "3.152.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d38bd349560bbbb25b0991950c858fabff1280b3"
+                "reference": "c5b43109dc0ecf77c4a18a8504ca3023f705b306"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d38bd349560bbbb25b0991950c858fabff1280b3",
-                "reference": "d38bd349560bbbb25b0991950c858fabff1280b3",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c5b43109dc0ecf77c4a18a8504ca3023f705b306",
+                "reference": "c5b43109dc0ecf77c4a18a8504ca3023f705b306",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-09-02T18:18:35+00:00"
+            "time": "2020-09-04T18:16:32+00:00"
         },
         {
             "name": "aws/aws-sdk-php-symfony",
@@ -1317,16 +1317,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.19",
+            "version": "2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c"
+                "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/840d5603eb84cc81a6a0382adac3293e57c1c64c",
-                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/f46887bc48db66c7f38f668eb7d6ae54583617ff",
+                "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1371,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-08-08T21:28:19+00:00"
+            "time": "2020-09-06T13:44:32+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1578,16 +1578,16 @@
         },
         {
             "name": "hanaboso/app-store",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/pipes-php-app-store.git",
-                "reference": "c7c9a5fb0aeeac3be1c07446b997f245e0fd7bbd"
+                "reference": "8cbc29f905c44cd68d9c76da6116b784dc720e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/pipes-php-app-store/zipball/c7c9a5fb0aeeac3be1c07446b997f245e0fd7bbd",
-                "reference": "c7c9a5fb0aeeac3be1c07446b997f245e0fd7bbd",
+                "url": "https://api.github.com/repos/hanaboso/pipes-php-app-store/zipball/8cbc29f905c44cd68d9c76da6116b784dc720e0c",
+                "reference": "8cbc29f905c44cd68d9c76da6116b784dc720e0c",
                 "shasum": ""
             },
             "require": {
@@ -1606,23 +1606,23 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "GPL-3.0-or-later"
             ],
             "description": "App store for PipesFramework",
-            "time": "2020-07-21T14:57:44+00:00"
+            "time": "2020-09-04T14:13:45+00:00"
         },
         {
             "name": "hanaboso/commons-bundle",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/commons-bundle.git",
-                "reference": "2b582a2131df1dee2fe239ae7048fadd3f85e314"
+                "reference": "8493f260896a6741270190594ed3e5d80f7a6db0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/commons-bundle/zipball/2b582a2131df1dee2fe239ae7048fadd3f85e314",
-                "reference": "2b582a2131df1dee2fe239ae7048fadd3f85e314",
+                "url": "https://api.github.com/repos/hanaboso/commons-bundle/zipball/8493f260896a6741270190594ed3e5d80f7a6db0",
+                "reference": "8493f260896a6741270190594ed3e5d80f7a6db0",
                 "shasum": ""
             },
             "require": {
@@ -1661,9 +1661,9 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "Apache-2.0"
             ],
-            "time": "2020-08-24T17:45:12+00:00"
+            "time": "2020-09-03T12:57:25+00:00"
         },
         {
             "name": "hanaboso/mongo-data-grid",
@@ -1703,16 +1703,16 @@
         },
         {
             "name": "hanaboso/pipes-php-sdk",
-            "version": "1.4.5",
+            "version": "1.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/pipes-php-sdk.git",
-                "reference": "45fdc159a576ec79a3f46a07b19dc8790615e5c1"
+                "reference": "c2e1918382f62b4b83ee744bfce766a30a60c78b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/pipes-php-sdk/zipball/45fdc159a576ec79a3f46a07b19dc8790615e5c1",
-                "reference": "45fdc159a576ec79a3f46a07b19dc8790615e5c1",
+                "url": "https://api.github.com/repos/hanaboso/pipes-php-sdk/zipball/c2e1918382f62b4b83ee744bfce766a30a60c78b",
+                "reference": "c2e1918382f62b4b83ee744bfce766a30a60c78b",
                 "shasum": ""
             },
             "require": {
@@ -1744,23 +1744,23 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "GPL-3.0-or-later"
             ],
             "description": "PHP sdk for PipesFramework",
-            "time": "2020-08-24T16:27:59+00:00"
+            "time": "2020-09-04T14:13:45+00:00"
         },
         {
             "name": "hanaboso/rabbit-mq-bundle",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/rabbit-mq-bundle.git",
-                "reference": "fac7d4c24ad6e1a1ecfc770f1bb501e7b3d3411d"
+                "reference": "f7468a62b89f0c5389bc75fa8d2069a3a83b5a84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/rabbit-mq-bundle/zipball/fac7d4c24ad6e1a1ecfc770f1bb501e7b3d3411d",
-                "reference": "fac7d4c24ad6e1a1ecfc770f1bb501e7b3d3411d",
+                "url": "https://api.github.com/repos/hanaboso/rabbit-mq-bundle/zipball/f7468a62b89f0c5389bc75fa8d2069a3a83b5a84",
+                "reference": "f7468a62b89f0c5389bc75fa8d2069a3a83b5a84",
                 "shasum": ""
             },
             "require": {
@@ -1770,7 +1770,7 @@
                 "guzzlehttp/promises": "^1.3",
                 "hanaboso/utils": "^1.0",
                 "php": "^7.4",
-                "php-amqplib/php-amqplib": "^2.11",
+                "php-amqplib/php-amqplib": "^2.12",
                 "symfony/monolog-bundle": "^3.5",
                 "symfony/yaml": "^5.1"
             },
@@ -1785,22 +1785,22 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "Apache-2.0"
             ],
-            "time": "2020-06-30T08:33:32+00:00"
+            "time": "2020-09-03T14:11:32+00:00"
         },
         {
             "name": "hanaboso/rest-bundle",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/rest-bundle.git",
-                "reference": "ce434ad6118a5a73901dbd2a01fd905b1b99b786"
+                "reference": "eb3135c8aa3c24ab5e860379f85ad233380960c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/rest-bundle/zipball/ce434ad6118a5a73901dbd2a01fd905b1b99b786",
-                "reference": "ce434ad6118a5a73901dbd2a01fd905b1b99b786",
+                "url": "https://api.github.com/repos/hanaboso/rest-bundle/zipball/eb3135c8aa3c24ab5e860379f85ad233380960c0",
+                "reference": "eb3135c8aa3c24ab5e860379f85ad233380960c0",
                 "shasum": ""
             },
             "require": {
@@ -1809,8 +1809,8 @@
                 "ext-mbstring": "*",
                 "hanaboso/utils": "^1.0",
                 "php": "^7.4",
-                "symfony/dependency-injection": "^5.0",
-                "symfony/serializer": "^5.0"
+                "symfony/dependency-injection": "^5.1",
+                "symfony/serializer": "^5.1"
             },
             "conflict": {
                 "friendsofsymfony/rest-bundle": "*",
@@ -1818,7 +1818,7 @@
             },
             "require-dev": {
                 "hanaboso/php-check-utils": "^1.1",
-                "symfony/yaml": "^5.0"
+                "symfony/yaml": "^5.1"
             },
             "type": "library",
             "autoload": {
@@ -1828,22 +1828,22 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "Apache-2.0"
             ],
-            "time": "2020-03-31T08:45:10+00:00"
+            "time": "2020-09-03T12:36:14+00:00"
         },
         {
             "name": "hanaboso/utils",
-            "version": "1.0.21",
+            "version": "1.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/utils.git",
-                "reference": "17f63ba24ac19e6a5d50f5b89665b0c73b7473ed"
+                "reference": "378c7abe2c0797dfe610742bb38cd0f66d2c5af1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/utils/zipball/17f63ba24ac19e6a5d50f5b89665b0c73b7473ed",
-                "reference": "17f63ba24ac19e6a5d50f5b89665b0c73b7473ed",
+                "url": "https://api.github.com/repos/hanaboso/utils/zipball/378c7abe2c0797dfe610742bb38cd0f66d2c5af1",
+                "reference": "378c7abe2c0797dfe610742bb38cd0f66d2c5af1",
                 "shasum": ""
             },
             "require": {
@@ -1864,7 +1864,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "Apache-2.0"
             ],
             "authors": [
                 {
@@ -1883,7 +1883,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2020-08-20T09:46:33+00:00"
+            "time": "2020-09-03T12:20:23+00:00"
         },
         {
             "name": "jean85/pretty-package-versions",
@@ -7076,80 +7076,45 @@
             "time": "2019-07-04T10:53:42+00:00"
         },
         {
-            "name": "brianium/habitat",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/brianium/habitat.git",
-                "reference": "d0979e3bb379cbc78ecb42b3ac171bc2b7e06d96"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brianium/habitat/zipball/d0979e3bb379cbc78ecb42b3ac171bc2b7e06d96",
-                "reference": "d0979e3bb379cbc78ecb42b3ac171bc2b7e06d96",
-                "shasum": ""
-            },
-            "require-dev": {
-                "monolog/monolog": ">=1.5.0",
-                "phpunit/phpunit": ">=3.7.21"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Habitat": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian",
-                    "email": "scaturrob@gmail.com",
-                    "homepage": "http://brianscaturro.com",
-                    "role": "Lead"
-                }
-            ],
-            "description": "A dependable php environment",
-            "time": "2013-06-08T04:42:29+00:00"
-        },
-        {
             "name": "brianium/paratest",
-            "version": "4.2.0",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paratestphp/paratest.git",
-                "reference": "88e4d87421279457c765abf5db54e1de71f31845"
+                "reference": "e54bea90b784b289a7ee17f2319210338c2d7d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/88e4d87421279457c765abf5db54e1de71f31845",
-                "reference": "88e4d87421279457c765abf5db54e1de71f31845",
+                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/e54bea90b784b289a7ee17f2319210338c2d7d6d",
+                "reference": "e54bea90b784b289a7ee17f2319210338c2d7d6d",
                 "shasum": ""
             },
             "require": {
-                "brianium/habitat": "^1.0",
                 "ext-dom": "*",
-                "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-pdo": "*",
                 "ext-reflection": "*",
                 "ext-simplexml": "*",
                 "php": "^7.3",
                 "phpunit/php-code-coverage": "^9.1.2",
+                "phpunit/php-file-iterator": "^3.0",
                 "phpunit/php-timer": "^5.0",
                 "phpunit/phpunit": "^9.3.5",
+                "sebastian/environment": "^5.1",
                 "symfony/console": "^4.4 || ^5.1",
                 "symfony/process": "^4.4 || ^5.1"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.1.0",
+                "ekino/phpstan-banned-code": "^0.3.1",
+                "ergebnis/phpstan-rules": "^0.15.1",
                 "phpstan/phpstan": "^0.12.37",
+                "phpstan/phpstan-deprecation-rules": "^0.12.5",
                 "phpstan/phpstan-phpunit": "^0.12.16",
+                "phpstan/phpstan-strict-rules": "^0.12.4",
                 "squizlabs/php_codesniffer": "^3.5.6",
+                "symfony/filesystem": "^5.1.3",
+                "thecodingmachine/phpstan-strict-rules": "^0.12.0",
                 "vimeo/psalm": "^3.12.2"
             },
             "bin": [
@@ -7183,7 +7148,7 @@
                 "phpunit",
                 "testing"
             ],
-            "time": "2020-08-10T07:51:24+00:00"
+            "time": "2020-08-26T13:44:25+00:00"
         },
         {
             "name": "contributte/di",
@@ -8063,21 +8028,21 @@
         },
         {
             "name": "hanaboso/php-check-utils",
-            "version": "1.1.35",
+            "version": "1.1.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanaboso/php-check-utils.git",
-                "reference": "8b1ca12151fdec71a5cb04aae493dcd743c99c46"
+                "reference": "da7414d01a70edc8f9bc8a846c0e4f5b0e99cbcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanaboso/php-check-utils/zipball/8b1ca12151fdec71a5cb04aae493dcd743c99c46",
-                "reference": "8b1ca12151fdec71a5cb04aae493dcd743c99c46",
+                "url": "https://api.github.com/repos/hanaboso/php-check-utils/zipball/da7414d01a70edc8f9bc8a846c0e4f5b0e99cbcf",
+                "reference": "da7414d01a70edc8f9bc8a846c0e4f5b0e99cbcf",
                 "shasum": ""
             },
             "require": {
                 "apitte/core": "^0.6",
-                "brianium/paratest": "^4.2",
+                "brianium/paratest": "^4.2 || ^5.0",
                 "dg/bypass-finals": "^1.2",
                 "doctrine/mongodb-odm": "^2.1",
                 "doctrine/orm": "^2.7",
@@ -8133,7 +8098,7 @@
                 }
             ],
             "description": "Utils for php development - CodeSniffer, PhpStan, PhpUnit, PhpStorm",
-            "time": "2020-08-25T06:49:57+00:00"
+            "time": "2020-09-03T11:53:48+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -9849,16 +9814,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.1.7",
+            "version": "9.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "2ef92bec3186a827faf7362ff92ae4e8ec2e49d2"
+                "reference": "f98f8466126d83b55b924a94d2244c53c216b8fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2ef92bec3186a827faf7362ff92ae4e8ec2e49d2",
-                "reference": "2ef92bec3186a827faf7362ff92ae4e8ec2e49d2",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f98f8466126d83b55b924a94d2244c53c216b8fb",
+                "reference": "f98f8466126d83b55b924a94d2244c53c216b8fb",
                 "shasum": ""
             },
             "require": {
@@ -9918,7 +9883,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-03T07:09:19+00:00"
+            "time": "2020-09-07T08:07:10+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

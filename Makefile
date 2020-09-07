@@ -18,7 +18,7 @@ Linux:
 		-e "s|{PROJECT_SOURCE_PATH}|$(shell pwd)|g" \
 		.env.dist > .env; \
 
-init-dev: docker-up-force composer-install
+init-dev: docker-up-force composer-install clear-cache
 
 # Docker section
 docker-up-force: .env .lo0-up
@@ -31,3 +31,9 @@ docker-down-clean: .env .lo0-down
 # Composer section
 composer-install:
 	$(PHP_SDK) composer install --no-suggest
+
+# App section
+clear-cache:
+	$(PHP_SDK) rm -rf var/log
+	$(PHP_SDK) php bin/console cache:clear --env=dev
+	$(PHP_SDK) php bin/console cache:warmup --env=dev
