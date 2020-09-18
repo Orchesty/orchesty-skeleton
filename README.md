@@ -17,7 +17,7 @@
 
 ## MAC developers
 
-#### Is "$("nproc" missing?
+#### Is "nproc" missing?
 1. Run `brew install coreutils`
 
 ## TODO:
