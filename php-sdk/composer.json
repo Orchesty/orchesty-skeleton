@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "GPL-3.0-or-later",
     "require": {
-        "php": "^7.4",
+        "php": "^8.0",
         "ext-dom": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
@@ -24,7 +24,9 @@
         "symfony/polyfill-intl-normalizer": "*",
         "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-php72": "*",
-        "symfony/polyfill-php73": "*"
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*"
     },
     "require-dev": {
         "hanaboso/php-check-utils": "^1.1",
