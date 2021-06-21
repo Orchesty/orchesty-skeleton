@@ -15,7 +15,7 @@
 1. Go to [UI Services](http://127.0.0.10/ui/sdk_implementations)
 1. Add `php-sdk` as new Services
 
-## MAC developers
+## MacOs developers
 
 #### Is "nproc" missing?
 1. Run `brew install coreutils`
@@ -23,3 +23,4 @@
 ## TODO:
 - Add Python SDK
 - Add C# SDK
+- Add Node.js SDK

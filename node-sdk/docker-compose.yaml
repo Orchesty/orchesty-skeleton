@@ -1,0 +1,38 @@
+version: '3.5'
+services:
+
+    sdk:
+        image: sdk:tag
+        build: ./docker
+        user: ${DEV_UID}:${DEV_GID}
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        environment:
+            APP_ENV: debug
+            UDP_LOGGER_HOST: logstash
+            UDP_LOGGER_PORT: 5005
+            METRICS_HOST: kapacitor
+            METRICS_PORT: 5005
+            MONGO_DSN: 'mongodb://mongo:27017'
+        command: sleep infinity
+
+    mongo:
+        image: mongo:latest
+        ports:
+            - ${DEV_IP}:27017:27017
+        volumes:
+            - mongo:/data/db
+
+    logstash:
+        image: mendhak/udp-listener
+        ports:
+            - ${DEV_IP}:4444:5005
+
+    kapacitor:
+        image: mendhak/udp-listener
+        ports:
+            - ${DEV_IP}:5120:5005
+
+volumes:
+    mongo: {}
