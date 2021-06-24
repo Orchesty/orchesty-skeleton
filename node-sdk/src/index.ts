@@ -1,4 +1,7 @@
-import { listen } from 'pipes-nodejs-sdk';
+import { initiateContainer, listen } from 'pipes-nodejs-sdk';
+
+// Load core services by:
+initiateContainer();
 
 // Express.js is available by import:
 // import { expressApp } from 'pipes-nodejs-sdk/lib';
