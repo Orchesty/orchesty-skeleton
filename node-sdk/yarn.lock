@@ -5761,9 +5761,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pipes-nodejs-sdk@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "pipes-nodejs-sdk@npm:1.0.3"
+"pipes-nodejs-sdk@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "pipes-nodejs-sdk@npm:1.0.4"
   dependencies:
     "@types/dateformat": ^3.0.1
     "@types/express": ^4.17.12
@@ -5784,7 +5784,7 @@ __metadata:
     simple-oauth2: ^4.2.0
     sodium-native: ^3.2.1
     winston: ^3.3.3
-  checksum: 97f2e037a0b77f7bd849ef0a046fe233ec78f3195277297050a26efb2410ea87bfc760cf8244dc2043774c765754be17ace69d2951fc085a83a47942ad7d4f45
+  checksum: 5c70d42a894be428577551bd471aa34d2eaf0fad142146cccfa39802605024a6336bda8730d61e4c14e67ee57bee35213e2e44580188bdcc3722d85748555088
   languageName: node
   linkType: hard
 
@@ -5805,7 +5805,7 @@ __metadata:
     eslint-plugin-import: ^2.23.4
     jest: ^27.0.5
     nodemon: ^2.0.7
-    pipes-nodejs-sdk: ^1.0.3
+    pipes-nodejs-sdk: ^1.0.4
     ts-jest: ^27.0.3
     ts-node: ^10.0.0
     typescript: ^4.3.4

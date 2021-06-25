@@ -15,6 +15,10 @@
 1. Go to [UI Services](http://127.0.0.10/ui/sdk_implementations)
 1. Add `php-sdk` as new Services
 
+## How to enable your Node.JS services
+1. Go to [UI Services](http://127.0.0.10/ui/sdk_implementations)
+1. Add `node-sdk` as new Services
+
 ## MacOs developers
 
 #### Is "nproc" missing?

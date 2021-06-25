@@ -7,6 +7,7 @@ include ./Makefile-mutagen
 
 DC=docker-compose
 PHP_SDK=docker-compose exec -T php-sdk
+NODE_SDK=docker-compose exec -T node-sdk
 
 ALIAS?=alias
 Darwin:
@@ -25,7 +26,7 @@ Linux:
 		-e "s|{PROJECT_SOURCE_PATH}|$(shell pwd)|g" \
 		.env.dist > .env; \
 
-init-dev: docker-up-force composer-install clear-cache
+init-dev: docker-up-force composer-install clear-cache yarn-install
 
 # Docker section
 docker-up-force: .env .lo0-up
@@ -38,6 +39,10 @@ docker-down-clean: .env .lo0-down
 # Composer section
 composer-install:
 	$(PHP_SDK) composer install
+
+# Yarn section
+yarn-install:
+	$(NODE_SDK) yarn install
 
 # App section
 clear-cache:

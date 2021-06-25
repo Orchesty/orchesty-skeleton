@@ -28,6 +28,23 @@ services:
             USER_TASK_LISTENER_ENABLE: 0
         mem_limit: 64MB
 
+    node-sdk:
+        image: node-sdk:tag
+        build: node-sdk/docker
+        user: ${DEV_UID}:${DEV_GID}
+        working_dir: /var/www
+        volumes:
+            - ./node-sdk/:/var/www
+        environment:
+            APP_ENV: debug
+            UDP_LOGGER_HOST: logstash
+            UDP_LOGGER_PORT: 5005
+            METRICS_HOST: kapacitor
+            METRICS_PORT: 5005
+            MONGO_DSN: 'mongodb://mongo:27017'
+        command: sleep infinity
+        mem_limit: 64MB
+
     batch-connector:
         image: hanabosocom/php-dev:php-8.0-alpine
         user: ${DEV_UID}:${DEV_GID}

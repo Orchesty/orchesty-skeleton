@@ -11,15 +11,19 @@ initiateContainer();
 
 // How to add Connector to the DIC
 // const myConnector = new MyConnector()
-// container.setConnector(myConnector.getName(), myConnector);
+// container.setConnector(myConnector);
 
 // How to add CustomNode to the DIC
 // const myCustomNode = new MyCustomNode()
-// container.setCustomNode(myCustomNode.getName(), myCustomNode);
+// container.setCustomNode(myCustomNode);
+
+// How to add Batch to the DIC
+// const myBatch = new MyBatch()
+// container.setBatch(myBatch);
 
 // How to add Application to the DIC
 // const myApp = new MyApp()
-// container.setApplication(myApp.getName(), myApp);
+// container.setApplication(myApp);
 
 // Start App by:
 listen();

@@ -13,7 +13,7 @@
   "author": "info@hanaboso.com",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "pipes-nodejs-sdk": "^1.0.3"
+    "pipes-nodejs-sdk": "^1.0.4"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
