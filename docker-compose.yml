@@ -1,4 +1,4 @@
-version: '2.4'
+version: '3.5'
 
 services:
     php-sdk:
@@ -36,12 +36,14 @@ services:
         volumes:
             - ./node-sdk/:/var/www
         environment:
-            APP_ENV: debug
-            UDP_LOGGER_HOST: logstash
-            UDP_LOGGER_PORT: 5005
-            METRICS_HOST: kapacitor
-            METRICS_PORT: 5005
-            MONGO_DSN: 'mongodb://mongo:27017'
+            # Envs for tests are load from node-sdk/.jest/testEnvs.js
+            JEST_DOCKER: 1
+            APP_ENV: 'debug'
+            CRYPT_SECRET: 'ThisIsNotSoSecret'
+            BACKEND_URL: 'http://127.0.0.42:8080'
+            UDP_LOGGER_DSN: 'logstash:5005'
+            METRICS_DSN: 'mongodb://mongo:27017/metrics'
+            MONGO_DSN: 'mongodb://mongo:27017/skladon'
         command: sleep infinity
         mem_limit: 64MB
 
