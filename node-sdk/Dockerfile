@@ -1,17 +1,12 @@
 FROM node:slim as precache
 
-RUN apt-get update && apt-get update && apt-get install -y yarn
-
-RUN yarn set version berry
-RUN yarn set version 2.4.2
+RUN apt-get update && apt-get update -y && apt-get install -y yarn
 
 # Install node packages
 WORKDIR /tmp/_node
-COPY ./.yarn ./.yarn/
-COPY ./.yarnrc.yml ./
-COPY ./package.json ./
-COPY ./yarn.lock ./
-RUN yarn install
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install --production
 
 FROM node:slim as build
 
@@ -19,7 +14,7 @@ WORKDIR /srv/app
 COPY --from=precache /tmp/_node /srv/app
 COPY ./ /srv/app
 
-RUN ./node_modules/.bin/tsc --project ./
+RUN npm run build
 
 FROM node:slim as prod
 
@@ -30,5 +25,6 @@ WORKDIR /srv/app
 COPY --from=build /srv/app/dist/src /srv/app
 COPY --from=precache /tmp/_node /srv/app
 
+RUN npm install pm2 -g
 
-CMD node index.js
+CMD pm2-runtime server.js
