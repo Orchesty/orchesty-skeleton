@@ -3,16 +3,12 @@
 namespace Pipes\PhpSdk\Tests;
 
 use Closure;
-use GuzzleHttp\Promise\PromiseInterface;
-use Hanaboso\CommonsBundle\Process\ProcessDto;
 use Hanaboso\CommonsBundle\Transport\Curl\CurlException;
 use Hanaboso\CommonsBundle\Transport\Curl\CurlManager;
 use Hanaboso\CommonsBundle\Transport\Curl\Dto\RequestDto;
 use Hanaboso\CommonsBundle\Transport\Curl\Dto\ResponseDto;
 use Hanaboso\PhpCheckUtils\PhpUnit\Traits\CustomAssertTrait;
 use Hanaboso\PhpCheckUtils\PhpUnit\Traits\PrivateTrait;
-use Hanaboso\PipesPhpSdk\RabbitMq\Impl\Batch\BatchInterface;
-use Hanaboso\PipesPhpSdk\RabbitMq\Impl\Batch\BatchTrait;
 use Hanaboso\Utils\String\Json;
 use phpmock\phpunit\PHPMock;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -29,7 +25,6 @@ abstract class KernelTestCaseAbstract extends KernelTestCase
     use PrivateTrait;
     use CustomAssertTrait;
     use PHPMock;
-    use BatchTrait;
 
     /**
      *
@@ -67,30 +62,6 @@ abstract class KernelTestCaseAbstract extends KernelTestCase
                 self::expectExceptionMessageMatches(sprintf('/^%s$/', preg_quote($exceptionMessage))) :
                 self::expectExceptionMessageMatches($exceptionMessage);
         }
-    }
-
-    /**
-     * @param BatchInterface $batch
-     * @param ProcessDto     $dto
-     * @param Closure|null   $closure
-     */
-    protected function assertBatch(BatchInterface $batch, ProcessDto $dto, ?Closure $closure = NULL): void
-    {
-        $batch->processBatch(
-            $dto,
-            $closure ?: function (): PromiseInterface {
-                self::assertTrue(TRUE);
-
-                return $this->createPromise();
-            },
-        )->then(
-            static function (): void {
-                self::assertTrue(TRUE);
-            },
-            static function (): void {
-                self::fail('Something gone wrong!');
-            },
-        )->wait();
     }
 
     /**

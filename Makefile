@@ -26,7 +26,7 @@ Linux:
 		-e "s|{PROJECT_SOURCE_PATH}|$(shell pwd)|g" \
 		.env.dist > .env; \
 
-init-dev: docker-up-force composer-install clear-cache yarn-install start
+init-dev: docker-up-force composer-install clear-cache
 
 # Docker section
 docker-up-force: .env .lo0-up
@@ -40,10 +40,10 @@ docker-down-clean: .env .lo0-down
 composer-install:
 	$(PHP_SDK) composer install
 
-# Yarn section
-start:
-	$(NODE_SDK) yarn start
+composer-update:
+	$(PHP_SDK) composer update
 
+# Yarn section
 yarn-install:
 	$(NODE_SDK) yarn install
 

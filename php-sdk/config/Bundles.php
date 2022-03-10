@@ -6,8 +6,6 @@ use Hanaboso\HbPFAppStore\HbPFAppStoreBundle;
 use Hanaboso\PipesPhpSdk\HbPFApplicationBundle\HbPFApplicationBundle;
 use Hanaboso\PipesPhpSdk\HbPFConnectorBundle\HbPFConnectorBundle;
 use Hanaboso\PipesPhpSdk\HbPFCustomNodeBundle\HbPFCustomNodeBundle;
-use Hanaboso\PipesPhpSdk\HbPFLongRunningNodeBundle\HbPFLongRunningNodeBundle;
-use Hanaboso\PipesPhpSdk\HbPFMapperBundle\HbPFMapperBundle;
 use Hanaboso\RestBundle\RestBundle;
 use RabbitMqBundle\RabbitMqBundle;
 use Symfony\Bundle\DebugBundle\DebugBundle;
@@ -27,8 +25,6 @@ return [
     HbPFCommonsBundle::class         => ['all' => TRUE],
     HbPFConnectorBundle::class       => ['all' => TRUE],
     HbPFCustomNodeBundle::class      => ['all' => TRUE],
-    HbPFLongRunningNodeBundle::class => ['all' => TRUE],
-    HbPFMapperBundle::class          => ['all' => TRUE],
     RabbitMqBundle::class            => ['all' => TRUE],
     RestBundle::class                => ['all' => TRUE],
 ];
