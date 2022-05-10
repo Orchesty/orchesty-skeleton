@@ -1,12 +1,12 @@
 FROM node:slim as precache
 
-RUN apt-get update && apt-get update -y && apt-get install -y yarn
+RUN npm i -g pnpm
 
 # Install node packages
 WORKDIR /tmp/_node
 COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install --production
+COPY pnpm-lock.yaml ./
+RUN pnpm install --production
 
 FROM node:slim as build
 
