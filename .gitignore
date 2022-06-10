@@ -3,11 +3,11 @@
 *.DS_Store
 
 # NODE
-node-sdk/dist
-node-sdk/coverage
-node-sdk/node_modules
+nodejs-sdk/dist
+nodejs-sdk/coverage
+nodejs-sdk/node_modules
 
-node-sdk/.pnpm-store
+nodejs-sdk/.pnpm-store
 
 # PHP
 php-sdk/vendor
