@@ -1,4 +1,4 @@
-import { initiateContainer, listen } from 'pipes-nodejs-sdk';
+import { initiateContainer, listen } from '@orchesty/nodejs-sdk';
 
 const prepare = async (): Promise<void> => {
 // Load core services by:
