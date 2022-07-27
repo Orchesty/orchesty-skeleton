@@ -5,10 +5,10 @@ const prepare = async (): Promise<void> => {
   await initiateContainer();
 
   // Express.js is available by import:
-  // import { expressApp } from 'pipes-nodejs-sdk/lib';
+  // import { expressApp } from '@orchesty/nodejs-sdk';
 
   // DIContainer is available by import:
-  // import { container } from 'pipes-nodejs-sdk/lib';
+  // import { container } from '@orchesty/nodejs-sdk';
 
   // How to add Connector to the DIC
   // const myConnector = new MyConnector()

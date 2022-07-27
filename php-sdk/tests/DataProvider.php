@@ -39,10 +39,10 @@ final class DataProvider
         string $clientSecret = 'clientSecret',
     ): ApplicationInstall
     {
-        $settings                                                                                                          = [];
-        $settings[ApplicationInterface::AUTHORIZATION_SETTINGS][ApplicationInterface::TOKEN][OAuth2Provider::ACCESS_TOKEN] = $accessToken;
-        $settings[ApplicationInterface::AUTHORIZATION_SETTINGS][OAuth2ApplicationInterface::CLIENT_ID]                     = $clientId;
-        $settings[ApplicationInterface::AUTHORIZATION_SETTINGS][OAuth2ApplicationInterface::CLIENT_SECRET]                 = $clientSecret;
+        $settings                                                                                                      = [];
+        $settings[ApplicationInterface::AUTHORIZATION_FORM][ApplicationInterface::TOKEN][OAuth2Provider::ACCESS_TOKEN] = $accessToken;
+        $settings[ApplicationInterface::AUTHORIZATION_FORM][OAuth2ApplicationInterface::CLIENT_ID]                     = $clientId;
+        $settings[ApplicationInterface::AUTHORIZATION_FORM][OAuth2ApplicationInterface::CLIENT_SECRET]                 = $clientSecret;
 
         $applicationInstall = new ApplicationInstall();
 
@@ -66,9 +66,9 @@ final class DataProvider
         string $password = 'pass123',
     ): ApplicationInstall
     {
-        $settings                                                                                    = [];
-        $settings[ApplicationInterface::AUTHORIZATION_SETTINGS][BasicApplicationInterface::USER]     = $user;
-        $settings[ApplicationInterface::AUTHORIZATION_SETTINGS][BasicApplicationInterface::PASSWORD] = $password;
+        $settings                                                                                = [];
+        $settings[ApplicationInterface::AUTHORIZATION_FORM][BasicApplicationInterface::USER]     = $user;
+        $settings[ApplicationInterface::AUTHORIZATION_FORM][BasicApplicationInterface::PASSWORD] = $password;
 
         $applicationInstall = new ApplicationInstall();
 
@@ -92,8 +92,8 @@ final class DataProvider
             ->setData($body)
             ->setHeaders(
                 [
-                    PipesHeaders::createKey(PipesHeaders::USER)        => [$user],
-                    PipesHeaders::createKey(PipesHeaders::APPLICATION) => [$key],
+                    PipesHeaders::USER        => [$user],
+                    PipesHeaders::APPLICATION => [$key],
                 ],
             );
 
