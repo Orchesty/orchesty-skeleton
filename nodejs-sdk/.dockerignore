@@ -1,7 +1,6 @@
 *
-!.yarn/releases
 !src
-!.yarnrc.yml
 !package.json
+!pnpm-lock.yaml
 !tsconfig.json
-!yarn.lock
+!tsconfig.prod.json
