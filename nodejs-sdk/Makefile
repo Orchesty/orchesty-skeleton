@@ -13,8 +13,7 @@ Linux:
 .env:
 	sed -e "s/{DEV_UID}/$(shell if [ "$(shell uname)" = "Linux" ]; then echo $(shell id -u); else echo '1001'; fi)/g" \
 		-e "s/{DEV_GID}/$(shell if [ "$(shell uname)" = "Linux" ]; then echo $(shell id -g); else echo '1001'; fi)/g" \
-		.env.dist > .env; \
-
+		.env.dist > .env;
 
 # Build
 build: .env

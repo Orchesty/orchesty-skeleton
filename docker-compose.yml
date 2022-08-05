@@ -10,7 +10,6 @@ services:
         working_dir: /var/www
         volumes:
             - ./php-sdk:/var/www:cached
-            - ${SSH_AUTH}:/tmp/.ssh-auth-sock
             - ${HOME}/dev/.composer:${HOME}/dev/.composer:cached
         environment:
             APP_DEBUG: 1
@@ -137,11 +136,8 @@ services:
         image: orchesty/limiter:${VERSION}
         environment:
             LIMITER_ADDR: 0.0.0.0:3333
-            RABBITMQ_HOST: rabbitmq
-            RABBITMQ_USER: guest
-            RABBITMQ_PASS: guest
-            MONGO_HOST: ${MONGO_DSN}
-            MONGO_COLLECTION: LimiterMessages
+            RABBITMQ_DSN: ${RABBITMQ_DSN}
+            MONGO_DSN: ${MONGO_DSN}
             LOGSTASH_HOST: logstash
             LOGSTASH_PORT: "5120"
         mem_limit: 32MB
