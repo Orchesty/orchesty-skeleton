@@ -1,31 +1,32 @@
 import { initiateContainer, listen } from '@orchesty/nodejs-sdk';
 
-const prepare = async (): Promise<void> => {
+async function prepare(): Promise<void> {
 // Load core services by:
-  await initiateContainer();
+    await initiateContainer();
 
-  // Express.js is available by import:
-  // import { expressApp } from '@orchesty/nodejs-sdk';
+    // Express.js is available by import:
+    // import { expressApp } from '@orchesty/nodejs-sdk';
 
-  // DIContainer is available by import:
-  // import { container } from '@orchesty/nodejs-sdk';
+    // DIContainer is available by import:
+    // import { container } from '@orchesty/nodejs-sdk';
 
-  // How to add Connector to the DIC
-  // const myConnector = new MyConnector()
-  // container.setConnector(myConnector);
+    // How to add Connector to the DIC
+    // const myConnector = new MyConnector()
+    // container.setConnector(myConnector);
 
-  // How to add CustomNode to the DIC
-  // const myCustomNode = new MyCustomNode()
-  // container.setCustomNode(myCustomNode);
+    // How to add CustomNode to the DIC
+    // const myCustomNode = new MyCustomNode()
+    // container.setCustomNode(myCustomNode);
 
-  // How to add Batch to the DIC
-  // const myBatch = new MyBatch()
-  // container.setBatch(myBatch);
+    // How to add Batch to the DIC
+    // const myBatch = new MyBatch()
+    // container.setBatch(myBatch);
 
 // How to add Application to the DIC
 // const myApp = new MyApp()
 // container.setApplication(myApp);
-};
+}
 
 // Start App by:
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 prepare().then(listen);
