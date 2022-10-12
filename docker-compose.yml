@@ -178,6 +178,7 @@ services:
             JWT_KEY: skeleton_keyskeleton_keyskeleton_keyskeleton_keyskeleton_keyskeleton_keyskeleton_key
             CRYPT_SECRET: ThisIsNotSoSecret
             X_AUTH_KEY: x_auth_key
+            INSTALLER_DIRS: '["/var/www/topology"]'
         mem_limit: 64MB
 
     logstash:

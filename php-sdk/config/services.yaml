@@ -9,7 +9,6 @@ parameters:
 
     node_services_dirs:
         - '%kernel.project_dir%/config'
-        - '%kernel.project_dir%/vendor/orchesty/php-sdk/src/HbPFLongRunningNodeBundle/Resources'
 
     applications:
         - '%kernel.project_dir%/config'
