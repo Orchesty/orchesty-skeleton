@@ -5,7 +5,6 @@ parameters:
     public.services: false
 
     backendHost: '%env(BACKEND_DSN)%'
-    udp_logger_url: '%env(UDP_LOGGER_DSN)%'
 
     node_services_dirs:
         - '%kernel.project_dir%/config'
