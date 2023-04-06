@@ -58,9 +58,9 @@ abstract class KernelTestCaseAbstract extends KernelTestCase
         }
 
         if ($exceptionMessage) {
-            $isExact ?
-                self::expectExceptionMessageMatches(sprintf('/^%s$/', preg_quote($exceptionMessage))) :
-                self::expectExceptionMessageMatches($exceptionMessage);
+            $isExact
+                ? self::expectExceptionMessageMatches(sprintf('/^%s$/', preg_quote($exceptionMessage)))
+                : self::expectExceptionMessageMatches($exceptionMessage);
         }
     }
 
@@ -81,7 +81,7 @@ abstract class KernelTestCaseAbstract extends KernelTestCase
     }
 
     /**
-     * @param mixed[]|string $data
+     * @param string|mixed[] $data
      * @param string|null    $url
      * @param int            $statusCode
      *
