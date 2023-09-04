@@ -25,15 +25,15 @@ function prepare(): void {
     //
     // // How to add Connector to the DIC
     // const myConnector = new MyConnector();
-    // container.setConnector(myConnector);
+    // container.setNode(myConnector);
     //
     // // How to add CustomNode to the DIC
     // const myCustomNode = new MyCustomNode();
-    // container.setCustomNode(myCustomNode);
+    // container.setNode(myCustomNode);
     //
     // // How to add Batch to the DIC
     // const myBatch = new MyBatch();
-    // container.setBatch(myBatch);
+    // container.setNode(myBatch);
     //
     // // How to add Application to the DIC
     // const myApp = new MyApp();
