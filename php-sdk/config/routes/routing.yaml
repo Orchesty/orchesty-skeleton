@@ -1,15 +1,15 @@
 hb_pf_application:
     resource: "@HbPFApplicationBundle/Controller"
-    type: annotation
+    type: attribute
 
 hb_pf_connector:
     resource: "@HbPFConnectorBundle/Controller"
-    type: annotation
+    type: attribute
 
 hb_pf_custom_node:
     resource: "@HbPFCustomNodeBundle/Controller"
-    type: annotation
+    type: attribute
 
 hb_pf_batch:
     resource: "@HbPFBatchBundle/Controller"
-    type: annotation
+    type: attribute
