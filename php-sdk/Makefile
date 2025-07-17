@@ -1,5 +1,5 @@
-DC=docker-compose
-DA=docker-compose exec -T php-sdk
+DC=docker compose
+DA=$(DC) exec -T php-sdk
 
 .env:
 	sed -e "s/{DEV_UID}/$(shell if [ "$(shell uname)" = "Linux" ]; then echo $(shell id -u); else echo '1001'; fi)/g" \

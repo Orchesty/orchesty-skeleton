@@ -1,4 +1,4 @@
-DCS=docker-compose exec -T sdk
+DCS=docker compose exec -T sdk
 IMAGE=EDIT_ME:$(TAG)
 
 ALIAS?=alias
