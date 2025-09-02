@@ -17,8 +17,7 @@ Linux:
 
 # Build
 build: .env
-	docker build -f Dockerfile -t $(IMAGE) --pull .
-	docker push $(IMAGE)
+	docker buildx build --platform=linux/amd64 -f Dockerfile -t $(IMAGE) --pull --push .
 
 docker-compose.ci.yml:
 	# Comment out any port forwarding
