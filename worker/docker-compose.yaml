@@ -1,7 +1,7 @@
 services:
 
-    sdk:
-        image: nodejs-sdk:tag
+    worker:
+        image: worker:worker-tag
         build: ./docker
         user: ${DEV_UID}:${DEV_GID}
         working_dir: /var/www

@@ -3,17 +3,12 @@
 *.DS_Store
 
 # NODE
-nodejs-sdk/dist
-nodejs-sdk/coverage
-nodejs-sdk/node_modules
+worker/dist
+worker/coverage
+worker/node_modules
+worker/.pnpm-store
 
-nodejs-sdk/.pnpm-store
-
-# PHP
-php-sdk/vendor
-php-sdk/var
-
-# PIPES
+# ORCHESTY
 .env
 topology/*
 !topology/.gitkeep

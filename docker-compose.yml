@@ -1,39 +1,13 @@
 services:
-    wait-for-it:
-        image: hanabosocom/wait-for-it:master
-
-    php-sdk:
-        image: hanabosocom/php-dev:php-8.4-alpine
+    worker:
+        image: worker:orchesty-tag
+        build: worker/docker
         user: ${DEV_UID}:${DEV_GID}
         working_dir: /var/www
         volumes:
-            - ./php-sdk:/var/www:cached
-            - ${HOME}/dev/.composer:${HOME}/dev/.composer:cached
+            - ./worker/:/var/www:cached
         environment:
-            APP_DEBUG: 1
-            APP_ENV: dev
-            PHP_WEBROOT: /var/www/public
-            COMPOSER_HOME: ${HOME}/dev/.composer
-            KERNEL_CLASS: Pipes\PhpSdk\Kernel
-            CRYPT_SECRET: ${CRYPT_SECRET}
-            BACKEND_DSN: ${BACKEND_URL}
-            STARTING_POINT_DSN: ${STARTING_POINT_DSN}
-            WORKER_API_HOST: ${WORKER_API_HOST}
-            ORCHESTY_API_KEY: ${ORCHESTY_API_KEY}
-        mem_limit: 512MB
-        depends_on:
-            - fluentd
-            - mongo
-
-    nodejs-sdk:
-        image: nodejs-sdk:tag
-        build: nodejs-sdk/docker
-        user: ${DEV_UID}:${DEV_GID}
-        working_dir: /var/www
-        volumes:
-            - ./nodejs-sdk/:/var/www:cached
-        environment:
-            # Envs for tests are load from nodejs-sdk/.jest/testEnvs.js
+            # Envs for tests are load from worker/.jest/testEnvs.js
             JEST_DOCKER: 1
             APP_ENV: debug
             CRYPT_SECRET: ${CRYPT_SECRET}
@@ -167,9 +141,10 @@ services:
             INSTALLER_DIRS: '["/var/www/topology"]'
         mem_limit: 64MB
         depends_on:
-            - fluentd
-            - mongo
-            - rabbitmq
+            mongo:
+              condition: service_healthy
+            rabbitmq:
+              condition: service_healthy
 
     fluentd:
         image: orchesty/fluentd:${VERSION}
@@ -185,6 +160,12 @@ services:
         volumes:
             - mongodb:/data/db
         mem_limit: 256MB
+        healthcheck:
+          test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+          interval: 30s
+          timeout: 10s
+          retries: 5
+          start_period: 60s
 
     rabbitmq:
         image: rabbitmq:3-management-alpine
@@ -193,6 +174,12 @@ services:
         volumes:
             - rabbitmq:/var/lib/rabbitmq
         mem_limit: 512MB
+        healthcheck:
+          test: ["CMD", "rabbitmq-diagnostics", "ping"]
+          interval: 30s
+          timeout: 10s
+          retries: 5
+          start_period: 60s
 
 volumes:
     mongodb:
