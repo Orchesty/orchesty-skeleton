@@ -19,6 +19,7 @@ docker-up-force: .env
 	$(DC) pull --ignore-pull-failures
 	$(DC) up -d --force-recreate --remove-orphans
 	$(DR) rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
+	$(DC) restart rabbitmq
 	$(DB) bin/console doctrine:mongodb:schema:update --dm default
 	$(DB) bin/console doctrine:mongodb:schema:update --dm metrics
 	$(DB) bin/console mongodb:index:update
