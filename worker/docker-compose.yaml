@@ -12,8 +12,8 @@ services:
             JEST_DOCKER: 1
             APP_ENV: 'debug'
             CRYPT_SECRET: 'ThisIsNotSoSecret'
-            BACKEND_URL: 'http://127.0.0.42:8080'
-            STARTING_POINT_DSN: 'http://127.0.0.42:8080'
-            WORKER_API_HOST: 'http://127.0.0.42:8080'
+            BACKEND_URL: 'http://127.0.0.1:8080'
+            STARTING_POINT_DSN: 'http://127.0.0.1:8080'
+            WORKER_API_HOST: 'http://127.0.0.1:8080'
             ORCHESTY_API_KEY: 'ThisIsNotSoSecretApiKey'
         command: sleep infinity
