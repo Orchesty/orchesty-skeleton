@@ -13,20 +13,27 @@
   "keywords": [],
   "author": "info@hanaboso.com",
   "dependencies": {
-    "@orchesty/nodejs-sdk": "^4.3.6"
+    "@orchesty/nodejs-sdk": "^5.0.9"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "$eslint"
+    }
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@hanaboso/eslint-plugin": "^1.2.5",
+    "@orchesty/nodejs-ai": "^1.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.3",
+    "axios-mock-adapter": "^2.1.0",
     "copyfiles": "^2.4.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.3.0",
     "jest": "^30.2.0",
     "nodemon": "^3.1.11",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }

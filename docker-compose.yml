@@ -7,18 +7,15 @@ services:
         volumes:
             - ./worker/:/var/www:cached
         environment:
-            # Envs for tests are load from worker/.jest/testEnvs.js
+            # Envs for tests are load from worker/.jest/testEnvs.ts
             JEST_DOCKER: 1
             APP_ENV: debug
+            TENANT_ID: ${TENANT_ID}
             CRYPT_SECRET: ${CRYPT_SECRET}
-            BACKEND_URL: ${BACKEND_URL}
-            STARTING_POINT_DSN: ${STARTING_POINT_DSN}
-            WORKER_API_HOST: ${WORKER_API_HOST}
             ORCHESTY_API_KEY: ${ORCHESTY_API_KEY}
         command: sh -c 'pnpm install && pnpm run start'
-        mem_limit: 512MB
+        mem_limit: 1536MB
         depends_on:
-            - fluentd
             - mongo
 
     multi-counter:
@@ -28,7 +25,6 @@ services:
             MONGODB_DSN: ${MONGO_DSN}
             METRICS_DSN: ${METRICS_DSN}
             STARTING_POINT_DSN: ${STARTING_POINT_DSN}
-            UDP_LOGGER_URL: ${UDP_LOGGER_DSN}
         mem_limit: 64MB
         depends_on:
             - mongo
@@ -45,7 +41,6 @@ services:
             - ${DEV_IP}:82:8080
         mem_limit: 64MB
         depends_on:
-            - fluentd
             - mongo
             - rabbitmq
 
@@ -61,7 +56,7 @@ services:
         volumes:
             - ${DOCKER_SOCKET_PATH}:/var/run/docker.sock
             - ./topology:/srv/topology
-        mem_limit: 64MB
+        mem_limit: 128MB
         depends_on:
             - mongo
 
@@ -73,7 +68,7 @@ services:
             RABBITMQ_DSN: ${RABBITMQ_DSN}
             PLATFORM: ${PLATFORM}
             DOCKER_NETWORK: ${NETWORK_NAME}
-        mem_limit: 32MB
+        mem_limit: 128MB
         depends_on:
             - mongo
             - rabbitmq
@@ -82,7 +77,7 @@ services:
         image: orchesty/cron:${VERSION}
         environment:
             MONGO_DSN: ${MONGO_DSN}
-            MONGO_COLLECTION: cron
+            MONGO_COLLECTION: Cron
             STARTING_POINT_DSN: ${STARTING_POINT_DSN}
         mem_limit: 32MB
         depends_on:
@@ -94,10 +89,9 @@ services:
             LIMITER_ADDR: 0.0.0.0:3333
             RABBITMQ_DSN: ${RABBITMQ_DSN}
             MONGO_DSN: ${MONGO_DSN}
-            UDP_LOGGER_DSN: ${UDP_LOGGER_DSN}
+            METRICS_DSN: ${METRICS_DSN}
         mem_limit: 32MB
         depends_on:
-            - fluentd
             - mongo
             - rabbitmq
 
@@ -105,18 +99,16 @@ services:
         image: orchesty/worker-api:${VERSION}
         environment:
             MONGODB_DSN: ${MONGO_DSN}
-            FLUENTD_DSN: ${TCP_LOGGER_DSN}
+            METRICS_DB: metrics
         mem_limit: 64MB
         depends_on:
-            - fluentd
             - mongo
 
     frontend:
         image: orchesty/frontend:${VERSION}
         environment:
-            BACKEND_URL: ${BACKEND_URL}
-            FRONTEND_URL: '/'
-            STARTINGPOINT_URL: ${STARTING_POINT_URL}
+            VITE_BACKEND_URL: ${BACKEND_URL}
+            VITE_STARTING_POINT_URL: ${STARTING_POINT_URL}
         ports:
             - ${DEV_IP}:80:80
         mem_limit: 32MB
@@ -124,7 +116,7 @@ services:
     backend:
         image: orchesty/backend:${VERSION}
         ports:
-            - ${DEV_IP}:8080:80
+            - ${DEV_IP}:81:80
         environment:
             BACKEND_URL: ${BACKEND_URL}/
             FRONTEND_URL: ${FRONTEND_URL}/
@@ -135,31 +127,25 @@ services:
             METRICS_DB: metrics
             CRON_DSN: cron-api:8080
             STARTING_POINT_URL: ${STARTING_POINT_DSN}
+            WORKER_API: http://worker-api:8080/
             TOPOLOGY_API_DSN: topology-api:8080
             DOCKER_PF_BRIDGE_IMAGE: orchesty/bridge:${VERSION}
             JWT_KEY: ${JWT_KEY}
             INSTALLER_DIRS: '["/var/www/topology"]'
-        mem_limit: 64MB
+        mem_limit: 128MB
         depends_on:
             mongo:
               condition: service_healthy
             rabbitmq:
               condition: service_healthy
 
-    fluentd:
-        image: orchesty/fluentd:${VERSION}
-        environment:
-            - MONGO_DSN=${MONGO_DSN}
-            - MONGO_COLLECTION=Logs
-        mem_limit: 128MB
-
     mongo:
-        image: mongo:7
+        image: mongo:8
         ports:
             - ${DEV_IP}:27017:27017
         volumes:
             - mongodb:/data/db
-        mem_limit: 256MB
+        mem_limit: 512MB
         healthcheck:
           test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
           interval: 30s

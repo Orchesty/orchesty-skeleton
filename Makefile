@@ -18,15 +18,14 @@ init-dev: docker-up-force
 docker-up-force: .env
 	$(DC) pull --ignore-pull-failures
 	$(DC) up -d --force-recreate --remove-orphans
+	until $(DR) rabbitmq-diagnostics -q check_running >/dev/null 2>&1; do sleep 2; done
 	$(DR) rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
-	$(DC) restart rabbitmq
 	$(DB) bin/console doctrine:mongodb:schema:update --dm default
 	$(DB) bin/console doctrine:mongodb:schema:update --dm metrics
 	$(DB) bin/console mongodb:index:update
 	$(DB) bin/console service:install worker worker:8080
 	$(DB) bin/console topology:install -c -u --force worker:8080
 	$(DB) bin/console api-token:create --key "$(shell grep 'ORCHESTY_API_KEY' .env | cut -d "=" -f2)"
-	$(DB) bin/console user:create "$(shell grep 'ORCHESTY_USER' .env | cut -d "=" -f2)" "$(shell grep 'ORCHESTY_PASSWORD' .env | cut -d "=" -f2)"
 
 docker-down-clean: .env
 	$(DC) down -v
