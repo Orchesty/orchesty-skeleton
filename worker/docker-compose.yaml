@@ -1,5 +1,4 @@
 services:
-
     worker:
         image: worker:worker-tag
         build: ./docker
@@ -8,12 +7,10 @@ services:
         volumes:
             - ./:/var/www:cached
         environment:
-            # Envs for tests are load from .jest/testEnvs.js
+            # Envs for tests are load from .jest/testEnvs.ts
             JEST_DOCKER: 1
             APP_ENV: 'debug'
+            TENANT_ID: 'docker'
             CRYPT_SECRET: 'ThisIsNotSoSecret'
-            BACKEND_URL: 'http://127.0.0.1:8080'
-            STARTING_POINT_DSN: 'http://127.0.0.1:8080'
-            WORKER_API_HOST: 'http://127.0.0.1:8080'
             ORCHESTY_API_KEY: 'ThisIsNotSoSecretApiKey'
         command: sleep infinity

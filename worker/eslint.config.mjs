@@ -15,6 +15,9 @@ export default [
   ...compat.extends('plugin:@hanaboso/orchesty'),
   {
     rules: {
+      'jest/expect-expect': ['error', {
+        assertFunctionNames: ['expect', '*.testBatch', '*.testConnector', '*.testCustomNode'],
+      }],
     },
   }
 ];

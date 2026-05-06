@@ -4,18 +4,18 @@ function prepare(): void {
     // Load core services by:
     initiateContainer();
 
-    // // System event services - imported from @orchesty/nodejs-connectors
+    // // System event services - imported from @orchesty/connector-common
     // const eventStatusFilterSuccess = new EventStatusFilter(EventEnum.PROCESS_SUCCESS);
-    // container.setCustomNode(eventStatusFilterSuccess);
+    // container.setNode(eventStatusFilterSuccess);
     //
     // const eventStatusFilterError = new EventStatusFilter(EventEnum.PROCESS_FAILED);
-    // container.setCustomNode(eventStatusFilterError);
+    // container.setNode(eventStatusFilterError);
     //
     // const eventStatusFilterLimiter = new EventStatusFilter(EventEnum.LIMIT_OVERFLOW);
-    // container.setCustomNode(eventStatusFilterLimiter);
+    // container.setNode(eventStatusFilterLimiter);
     //
     // const eventStatusFilterTrash = new EventStatusFilter(EventEnum.MESSAGE_IN_TRASH);
-    // container.setCustomNode(eventStatusFilterTrash);
+    // container.setNode(eventStatusFilterTrash);
     //
     // // Express.js is available by import:
     // import { expressApp } from '@orchesty/nodejs-sdk';
@@ -42,4 +42,8 @@ function prepare(): void {
 
 // Start App by:
 prepare();
-listen();
+listen().catch((e: unknown) => {
+    const err = e instanceof Error ? e : new Error(typeof e === 'string' ? e : JSON.stringify(e));
+    process.stderr.write(`${err.message}\n${err.stack ?? ''}\n`);
+    process.exit(1);
+});
